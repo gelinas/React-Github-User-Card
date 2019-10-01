@@ -6,6 +6,7 @@ class FollowerCard extends React.Component {
         console.log(props);
     }
 
+
     render() {
         return(
             <div className="user-card">
@@ -15,6 +16,11 @@ class FollowerCard extends React.Component {
                 />
                 <h2>{this.props.userData.login}</h2>
                 <a href={this.props.userData.html_url}>See his GitHub here</a>
+                <p>
+                    <button onClick={() => this.props.changeUser(this.props.userData.login)}>
+                        Load his card
+                    </button>
+                </p>
             </div>
         );
     }
