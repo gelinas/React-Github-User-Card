@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 
 import UserCard from './components/UserCard'
+import FollowerCard from './components/FollowerCard'
+
 
 import './App.scss';
 
@@ -52,7 +54,9 @@ class App extends React.Component {
         </section>
         <section>
           <h2>{`${this.state.userData.name} follower list`}</h2>
-          {}
+          {this.state.userFollowers.map(
+            follower => <FollowerCard key={follower.id} userData={follower} />
+          )}
         </section>
       </div>
     );
